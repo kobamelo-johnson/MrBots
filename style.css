@@ -1,0 +1,271 @@
+/* style.css - Full Version for Cinematic/Luxury Theme with #00cbfe accent */
+
+/* --- Global Resets & Base --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #EAE0D5; /* Warmer off-white */
+    line-height: 1.7;
+    background-color: #121212; /* Very dark base */
+    overflow-x: hidden;
+}
+
+.site-wrapper {
+    background-image: linear-gradient(to bottom, rgba(10, 10, 12, 0.65) 0%, rgba(10, 10, 12, 0.85) 60%, #121212 100%), url('BOTS01.png'); /* Ensure BOTS01.png is present */
+    background-size: cover;
+    background-position: center top;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Navigation --- */
+.main-nav {
+    background-color: rgba(18, 18, 18, 0.75);
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    padding: 10px 3%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(0, 203, 254, 0.2); /* Accent with new blue */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    height: 70px;
+}
+.main-nav.scrolled { background-color: rgba(18, 18, 18, 0.9); box-shadow: 0 3px 15px rgba(0,0,0,0.5); }
+
+.nav-logo-container {
+    width: 50px; height: 50px;
+    border-radius: 50%; overflow: hidden;
+    background-color: #2c2c2c;
+    display: flex; justify-content: center; align-items: center;
+    flex-shrink: 0;
+    border: 1px solid rgba(0, 203, 254, 0.3); /* Logo border with new blue */
+}
+.nav-logo-image { width: 100%; height: 100%; object-fit: cover; }
+
+/* Nav Loader styles - Kept for completeness if you re-add it to HTML/JS */
+.nav-loader {
+    width: 120px; height: 3px;
+    background-color: rgba(0, 203, 254, 0.15); /* Track color based on new blue */
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+    margin: 0 20px; /* Adjust if needed based on final nav layout */
+    opacity: 1;
+    transition: opacity 0.5s 1.8s ease-out; /* Fade out after animation */
+}
+.nav-loader.fade-out {
+    opacity: 0;
+}
+.nav-loader-bar {
+    width: 0%; height: 100%;
+    background-color: #00cbfe; /* Your specific blue */
+    border-radius: 2px;
+    transition: width 2s ease-out;
+}
+/* --- End Nav Loader Styles --- */
+
+
+.nav-title {
+    font-family: 'Playfair Display', serif; font-size: 1.6em;
+    font-weight: 700; color: #FFFFFF; text-transform: uppercase;
+    letter-spacing: 1.5px;
+    white-space: nowrap;
+    margin-left: auto; /* Pushes title to far right if loader is removed or before it */
+}
+.nav-title span.live-accent {
+    font-weight: normal;
+    color: #00cbfe; /* YOUR SPECIFIC BLUE COLOR */
+}
+
+
+/* --- Hero Section --- */
+.hero-section {
+    height: 80vh; min-height: 550px; display: flex; align-items: center;
+    justify-content: center; text-align: center; position: relative;
+    padding-top: 80px; color: #fff;
+}
+.hero-content-wrapper { position: relative; z-index: 1; padding: 30px 20px; background-color: rgba(0,0,0,0.2); border-radius: 8px;}
+.hero-text h1 {
+    font-family: 'Playfair Display', serif; font-size: clamp(3.2em, 6.5vw, 5em);
+    font-weight: 700; color: #fff; margin-bottom: 0.3em; line-height: 1.1;
+    text-shadow: 0 3px 20px rgba(0,0,0,0.7);
+}
+.hero-text p {
+    font-family: 'Lato', sans-serif; font-size: clamp(1.1em, 2.2vw, 1.35em);
+    font-weight: 300; color: rgba(234, 224, 213, 0.9);
+    margin-bottom: 2em; max-width: 600px; margin-left: auto; margin-right: auto;
+    text-shadow: 0 1px 8px rgba(0,0,0,0.5);
+}
+.cta-button {
+    display: inline-block; background-color: #00cbfe; /* NEW BLUE for CTA */
+    color: #ffffff; border: 2px solid transparent;
+    padding: 15px 45px; text-decoration: none; font-family: 'Montserrat', sans-serif;
+    font-weight: 600; font-size: 1em; border-radius: 5px;
+    transition: all 0.3s ease; box-shadow: 0 5px 18px rgba(0, 203, 254, 0.25);
+    text-transform: uppercase; letter-spacing: 1px;
+}
+.cta-button:hover {
+    background-color: transparent;
+    border-color: #00cbfe;
+    color: #00cbfe;
+    transform: translateY(-2px);
+    box-shadow: 0 7px 22px rgba(0, 203, 254, 0.3);
+}
+
+/* --- Main Results Content Area & Section --- */
+.content-area { flex-grow: 1; padding: 60px 5%; position: relative; z-index: 5; }
+.results-section {
+    max-width: 1180px; margin: 0 auto; display: flex; gap: 40px;
+    background-color: rgba(24, 24, 28, 0.9);
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    padding: 40px; border-radius: 12px;
+    border: 1px solid rgba(0, 203, 254, 0.15);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+    position: relative; overflow: hidden;
+}
+.results-section::before { /* Muted flag background with new blue */
+    content: ''; position: absolute; top: 0; left: 0;
+    width: 300%; height: 100%; z-index: -1;
+    background-image: linear-gradient(120deg,
+        rgba(0, 203, 254, 0.07) 0%, rgba(0, 203, 254, 0.07) 20%,
+        rgba(200, 200, 200, 0.05) 20%, rgba(200, 200, 200, 0.05) 40%,
+        rgba(50, 50, 50, 0.07) 40%, rgba(50, 50, 50, 0.07) 60%,
+        rgba(0, 203, 254, 0.07) 60%, rgba(0, 203, 254, 0.07) 80%,
+        rgba(200, 200, 200, 0.05) 80%, rgba(200, 200, 200, 0.05) 100%
+    );
+    background-size: 60% 100%; opacity: 0.3;
+    animation: waveBackground 45s linear infinite;
+}
+@keyframes waveBackground { 0% { background-position: 0% 50%; } 100% { background-position: 150% 50%; } }
+
+.results-column { flex: 2.5; }
+.sidebar-column { flex: 1; padding-left: 30px; border-left: 1px solid rgba(0, 203, 254, 0.1); }
+.results-column h2, .sidebar-column h3 {
+    font-family: 'Playfair Display', serif; color: #EAE0D5; margin-bottom: 30px;
+    font-size: 2em; font-weight: 700; padding-bottom: 15px; position: relative;
+    text-align: left;
+}
+.results-column h2::after, .sidebar-column h3::after {
+    content: ''; position: absolute; bottom: -1px; left: 0;
+    width: 60px; height: 3px; background-color: #00cbfe; /* New Blue accent */
+    border-radius: 2px;
+}
+.sidebar-widget { margin-bottom: 30px; padding: 20px; background-color: rgba(42, 42, 42, 0.4); border-radius: 8px; }
+.sidebar-widget h4 {
+    color: #00cbfe; /* New Blue for subheadings */
+    margin-bottom: 12px;
+    font-family: 'Montserrat', sans-serif; font-weight: 600;
+    font-size: 1.1em;
+}
+.sidebar-widget p#botswana-fact-display {
+    font-size: 0.95em;
+    color: #c0c8d0;
+    font-family: 'Lato', sans-serif;
+    min-height: 100px;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* --- Loading Spinner --- */
+.loading-spinner { display: flex; justify-content: center; align-items: center; height: 200px; }
+.loading-spinner div {
+  box-sizing: border-box; display: block; position: absolute; width: 60px; height: 60px;
+  margin: 8px; border: 7px solid #00cbfe; border-radius: 50%; /* New Blue */
+  animation: loading-spinner-anim 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #00cbfe transparent transparent transparent;
+}
+@keyframes loading-spinner-anim { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+
+/* --- Contestant Item (Main Bar) --- */
+.contestant-item {
+    background-color: transparent; margin-bottom: 10px; border-radius: 0;
+    border-bottom: 1px solid rgba(0, 203, 254, 0.1); /* Blue separator */
+    transition: background-color 0.3s ease;
+}
+.contestant-item:last-child { border-bottom: none; }
+.contestant-main-info {
+    display: flex; align-items: center; padding: 18px 10px 18px 0; cursor: pointer;
+}
+.contestant-item:hover .contestant-main-info { background-color: rgba(0, 203, 254, 0.05); }
+
+.contestant-rank {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3em;
+    font-weight: 700;
+    color: #EAE0D5; /* Rank color to contrast with blue, could be a gold like #B08D57 */
+    min-width: 45px;
+    padding-right: 15px;
+    text-align: right;
+    flex-shrink: 0;
+    line-height: 1.2;
+}
+.contestant-details { flex-grow: 1; display: flex; flex-direction: column; justify-content: center; }
+.contestant-name {
+    font-family: 'Montserrat', sans-serif; font-size: 1.15em; font-weight: 500;
+    color: #EAE0D5; margin-bottom: 8px; line-height: 1.2;
+}
+.vote-bar-container {
+    width: 100%; height: 10px; background-color: rgba(0,0,0,0.6); /* Dark track */
+    border-radius: 5px; position: relative; overflow: hidden;
+}
+.vote-bar {
+    height: 100%; background: #00cbfe; /* New Blue for vote bars */
+    border-radius: 5px; transition: width 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    position: relative; z-index: 1; /* Ensure bar is above shimmer track if any confusion */
+}
+.vote-bar.updating::after { /* Shimmer effect */
+    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient( to right, rgba(173, 239, 255, 0) 0%, rgba(173, 239, 255, 0.3) 50%, rgba(173, 239, 255, 0) 100% ); /* Lighter shade of #00cbfe */
+    border-radius: inherit; /* Inherit border-radius from .vote-bar */
+    transform: translateX(-100%);
+    animation: shimmer 1s ease-out; z-index: 2;
+}
+@keyframes shimmer {
+    0% { transform: translateX(-100%); } 50% { transform: translateX(100%); } 100% { transform: translateX(100%); }
+}
+
+.vote-count-display {
+    font-size: 1.25em; font-weight: 700; color: #ffffff; margin-left: 20px;
+    min-width: 65px; text-align: right; font-family: 'Orbitron', sans-serif; flex-shrink: 0;
+}
+
+/* --- Vote Log Details (Expandable Sub-bars) --- */
+.vote-log-details-wrapper {
+    background-color: rgba(10, 15, 24, 0.2); max-height: 0; overflow: hidden;
+    transition: all 0.5s ease-in-out; padding-left: 65px;
+    padding-right: 5px; border-top: 1px solid rgba(0, 203, 254, 0.1);
+}
+.contestant-item.expanded .vote-log-details-wrapper { padding-top: 12px; padding-bottom: 15px; }
+.vote-log-list { list-style-type: none; padding-left: 0; max-height: 230px; overflow-y: auto; }
+.vote-log-list::-webkit-scrollbar { width: 6px; }
+.vote-log-list::-webkit-scrollbar-track { background: rgba(0,0,0,0.3); border-radius:3px;}
+.vote-log-list::-webkit-scrollbar-thumb { background-color: #00cbfe; } /* New blue scroll thumb */
+.vote-log-list h5.vote-log-heading {
+    font-family: 'Montserrat', sans-serif; font-size: 0.95em; color: #00cbfe; /* New Blue */
+    margin-bottom: 10px; padding-bottom: 5px;
+    border-bottom: 1px solid rgba(0, 203, 254, 0.2); font-weight: 500;
+}
+.vote-log-item {
+    display: flex; justify-content: space-between; align-items: center;
+    background-color: rgba(42, 42, 42, 0.15); padding: 7px 10px; margin-bottom: 3px;
+    border-radius: 3px; font-size: 0.8em; color: #b0b8c5;
+    border-left: 2px solid #00cbfe; /* New Blue accent */
+}
+.vote-log-item .voter-num { font-weight: 400; }
+.vote-log-item .vote-time { font-family: 'Lato', sans-serif; font-size: 0.9em; font-weight: 300; }
+
+/* --- Footer --- */
+.site-footer {
+    text-align: center; padding: 30px; margin-top: 50px;
+    color: rgba(234, 224, 213, 0.5); font-size: 0.9em;
+    background-color: rgba(10, 10, 12, 0.9);
+    border-top: 1px solid rgba(0, 203, 254, 0.1);
+}

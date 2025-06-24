@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mr. Botswana - Live Voting Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="site-wrapper">
+        <nav class="main-nav">
+            <div class="nav-logo-container">
+                <img src="BOTS02.png" alt="Mr Botswana Logo" class="nav-logo-image">
+            </div>
+            <div class="nav-loader"><div class="nav-loader-bar"></div></div>
+            <div class="nav-title">MR BOTSWANA <span class="live-accent">LIVE</span></div>
+        </nav>
+
+        <header class="hero-section">
+            <div class="hero-content-wrapper">
+                <div class="hero-text">
+                    <h1>The People's Choice</h1>
+                    <p>Follow the Mr. Botswana election live as votes shape the outcome.</p>
+                    <a href="#results-dashboard-anchor" class="cta-button">View Live Standings</a>
+                </div>
+            </div>
+        </header>
+
+        <main class="content-area">
+            <div id="results-dashboard-anchor"></div>
+            <section class="results-section">
+                <div class="results-column">
+                    <h2>Current Standings</h2>
+                    <div id="contestants-area">
+                        <div class="loading-spinner" id="loadingSpinner">
+                            <div></div><div></div><div></div><div></div>
+                        </div>
+                        <!-- Contestant items will be dynamically inserted here by JavaScript -->
+                    </div>
+                </div>
+                <aside class="sidebar-column">
+                    <h3>Explore Botswana</h3>
+                    <div class="sidebar-widget" id="botswana-facts-widget">
+                        <h4>Did You Know?</h4>
+                        <p id="botswana-fact-display">Loading interesting facts about Botswana...</p>
+                    </div>
+                    <!-- You can add more widgets below if needed -->
+                </aside>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <p>© <span id="currentYear"></span> Mr. Botswana Official. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
