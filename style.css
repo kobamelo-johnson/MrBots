@@ -1,18 +1,113 @@
-/* style.css - Full Version for Cinematic/Luxury Theme with #00cbfe accent */
+/* style.css - ABSOLUTELY FULL VERSION - Theme Toggle, BOTS01/BOTS03 Backgrounds */
+
+/* --- :root CSS Variables --- */
+:root {
+    /* DARK MODE DEFAULTS (Site loads with body.dark-mode) */
+    --bg-primary-dark: #121212;
+    --bg-secondary-dark: #1A1A1A;
+    --bg-content-dark: rgba(24, 24, 28, 0.92);
+    --bg-widget-dark: rgba(42, 42, 42, 0.5);
+    --text-primary-dark: #EAE0D5;
+    --text-secondary-dark: #b0b8c5;
+    --accent-blue-dark: #00cbfe;    /* Your specific Botswana blue for dark mode */
+    --accent-gold-dark: #B08D57;    /* Gold for dark mode */
+    --border-color-dark: rgba(0, 203, 254, 0.15);
+    --hero-background-image-dark: url('BOTS01.png'); /* DARK MODE IMAGE (Man with Lion) */
+    --hero-overlay-gradient-dark: linear-gradient(to bottom, rgba(10, 10, 12, 0.65) 0%, rgba(10, 10, 12, 0.85) 60%, var(--bg-primary-dark) 100%);
+    --hero-text-color-dark: #fff;
+    --hero-subtext-color-dark: rgba(234, 224, 213, 0.9);
+    --hero-text-shadow-dark: 0 3px 20px rgba(0,0,0,0.7);
+    --nav-bg-dark: rgba(18, 18, 18, 0.75);
+    --nav-bg-scrolled-dark: rgba(18, 18, 18, 0.9);
+    --nav-border-dark: rgba(0, 203, 254, 0.2); /* Using accent blue for nav border in dark */
+    --results-flag-blue-dark: rgba(0, 203, 254, 0.07); /* Muted version of accent blue */
+    --results-flag-white-dark: rgba(200, 200, 200, 0.05);
+    --results-flag-black-dark: rgba(50, 50, 50, 0.07);
+
+    /* LIGHT MODE SPECIFIC VARIABLES (to be applied when .light-mode is on body) */
+    --bg-primary-light: #f0f2f5; /* Light grey, almost white */
+    --bg-secondary-light: #ffffff; /* White for cards */
+    --bg-content-light: rgba(255, 255, 255, 0.95);
+    --bg-widget-light: rgba(235, 235, 240, 0.8);
+    --text-primary-light: #2c3e50; /* Dark blue/grey text */
+    --text-secondary-light: #5d6d7e;
+    --accent-blue-light: #0077b6;    /* A nice vibrant blue from your palette for light mode */
+    --accent-gold-light: #ff8f00;    /* A vibrant orange/gold from your palette for light mode */
+    --border-color-light: rgba(0, 119, 182, 0.2); /* Border based on light mode blue */
+    --hero-background-image-light: url('BOTS03.png'); /* LIGHT MODE IMAGE */
+    --hero-overlay-gradient-light: linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 0%, rgba(240, 242, 245, 0.2) 60%, var(--bg-primary-light) 100%);
+    --hero-text-color-light: #1c2833;
+    --hero-subtext-color-light: #34495e;
+    --hero-text-shadow-light: 0 1px 5px rgba(0,0,0,0.15);
+    --nav-bg-light: rgba(245, 247, 250, 0.8);
+    --nav-bg-scrolled-light: rgba(245, 247, 250, 0.95);
+    --nav-border-light: rgba(0, 119, 182, 0.2);
+    --results-flag-blue-light: rgba(100, 181, 246, 0.15); /* Light mode flag colors (example from palette) */
+    --results-flag-white-light: rgba(255, 204, 128, 0.1);
+    --results-flag-black-light: rgba(129, 212, 250, 0.12);
+}
+
+/* --- Apply Theme Variables --- */
+body.dark-mode {
+    --bg-primary: var(--bg-primary-dark);
+    --bg-secondary: var(--bg-secondary-dark);
+    --bg-content: var(--bg-content-dark);
+    --bg-widget: var(--bg-widget-dark);
+    --text-primary: var(--text-primary-dark);
+    --text-secondary: var(--text-secondary-dark);
+    --accent-blue: var(--accent-blue-dark);
+    --accent-gold: var(--accent-gold-dark);
+    --border-color: var(--border-color-dark);
+    --current-hero-bg-image: var(--hero-background-image-dark);
+    --current-hero-overlay: var(--hero-overlay-gradient-dark);
+    --hero-text-color: var(--hero-text-color-dark);
+    --hero-subtext-color: var(--hero-subtext-color-dark);
+    --hero-text-shadow: var(--hero-text-shadow-dark);
+    --nav-bg: var(--nav-bg-dark);
+    --nav-bg-scrolled: var(--nav-bg-scrolled-dark);
+    --nav-border: var(--nav-border-dark);
+    --results-flag-blue: var(--results-flag-blue-dark);
+    --results-flag-white: var(--results-flag-white-dark);
+    --results-flag-black: var(--results-flag-black-dark);
+}
+
+body.light-mode {
+    --bg-primary: var(--bg-primary-light);
+    --bg-secondary: var(--bg-secondary-light);
+    --bg-content: var(--bg-content-light);
+    --bg-widget: var(--bg-widget-light);
+    --text-primary: var(--text-primary-light);
+    --text-secondary: var(--text-secondary-light);
+    --accent-blue: var(--accent-blue-light);
+    --accent-gold: var(--accent-gold-light);
+    --border-color: var(--border-color-light);
+    --current-hero-bg-image: var(--hero-background-image-light);
+    --current-hero-overlay: var(--hero-overlay-gradient-light);
+    --hero-text-color: var(--hero-text-color-light);
+    --hero-subtext-color: var(--hero-subtext-color-light);
+    --hero-text-shadow: var(--hero-text-shadow-light);
+    --nav-bg: var(--nav-bg-light);
+    --nav-bg-scrolled: var(--nav-bg-scrolled-light);
+    --nav-border: var(--nav-border-light);
+    --results-flag-blue: var(--results-flag-blue-light);
+    --results-flag-white: var(--results-flag-white-light);
+    --results-flag-black: var(--results-flag-black-light);
+}
 
 /* --- Global Resets & Base --- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
-    font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    color: #EAE0D5; /* Warmer off-white */
+    font-family: 'Lato', sans-serif;
+    color: var(--text-primary);
     line-height: 1.7;
-    background-color: #121212; /* Very dark base */
+    background-color: var(--bg-primary);
     overflow-x: hidden;
+    transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 .site-wrapper {
-    background-image: linear-gradient(to bottom, rgba(10, 10, 12, 0.65) 0%, rgba(10, 10, 12, 0.85) 60%, #121212 100%), url('BOTS01.png'); /* Ensure BOTS01.png is present */
+    background-image: var(--current-hero-overlay), var(--current-hero-bg-image);
     background-size: cover;
     background-position: center top;
     background-attachment: fixed;
@@ -23,153 +118,157 @@ body {
 
 /* --- Navigation --- */
 .main-nav {
-    background-color: rgba(18, 18, 18, 0.75);
+    background-color: var(--nav-bg);
     backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
     padding: 10px 3%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    border-bottom: 1px solid rgba(0, 203, 254, 0.2); /* Accent with new blue */
+    position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+    border-bottom: 1px solid var(--nav-border);
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
     height: 70px;
 }
-.main-nav.scrolled { background-color: rgba(18, 18, 18, 0.9); box-shadow: 0 3px 15px rgba(0,0,0,0.5); }
+.main-nav.scrolled { background-color: var(--nav-bg-scrolled); box-shadow: 0 3px 15px rgba(0,0,0,0.15); }
+body.dark-mode .main-nav.scrolled { box-shadow: 0 3px 15px rgba(0,0,0,0.5); }
+
 
 .nav-logo-container {
-    width: 50px; height: 50px;
-    border-radius: 50%; overflow: hidden;
-    background-color: #2c2c2c;
+    width: 50px; height: 50px; border-radius: 50%; overflow: hidden;
+    background-color: var(--bg-secondary);
     display: flex; justify-content: center; align-items: center;
-    flex-shrink: 0;
-    border: 1px solid rgba(0, 203, 254, 0.3); /* Logo border with new blue */
+    flex-shrink: 0; border: 1px solid var(--accent-gold);
 }
 .nav-logo-image { width: 100%; height: 100%; object-fit: cover; }
 
-/* Nav Loader styles - Kept for completeness if you re-add it to HTML/JS */
-.nav-loader {
-    width: 120px; height: 3px;
-    background-color: rgba(0, 203, 254, 0.15); /* Track color based on new blue */
-    border-radius: 2px;
-    overflow: hidden;
-    position: relative;
-    margin: 0 20px; /* Adjust if needed based on final nav layout */
-    opacity: 1;
-    transition: opacity 0.5s 1.8s ease-out; /* Fade out after animation */
+.nav-controls {
+    display: flex;
+    align-items: center;
+    margin-left: auto; /* Pushes this group (toggle + title) to the right */
 }
-.nav-loader.fade-out {
-    opacity: 0;
-}
-.nav-loader-bar {
-    width: 0%; height: 100%;
-    background-color: #00cbfe; /* Your specific blue */
-    border-radius: 2px;
-    transition: width 2s ease-out;
-}
-/* --- End Nav Loader Styles --- */
 
+#theme-toggle {
+    background: none; border: none;
+    color: var(--text-primary);
+    cursor: pointer; padding: 8px; margin-right: 20px; /* Space between toggle and title */
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.2s, color 0.2s;
+}
+#theme-toggle:hover { background-color: rgba(120, 120, 120, 0.1); } /* Generic hover */
+body.dark-mode #theme-toggle:hover { background-color: rgba(255,255,255,0.1); } /* Specific for dark */
+body.light-mode #theme-toggle:hover { background-color: rgba(0,0,0,0.05); } /* Specific for light */
+
+
+#theme-toggle svg { width: 22px; height: 22px; fill: currentColor; }
+/* Initial state is dark-mode on body */
+.dark-mode .sun-icon { display: block; } /* Show sun, means current is dark, click for light */
+.dark-mode .moon-icon { display: none; }
+.light-mode .sun-icon { display: none; }
+.light-mode .moon-icon { display: block; } /* Show moon, means current is light, click for dark */
 
 .nav-title {
     font-family: 'Playfair Display', serif; font-size: 1.6em;
-    font-weight: 700; color: #FFFFFF; text-transform: uppercase;
-    letter-spacing: 1.5px;
-    white-space: nowrap;
-    margin-left: auto; /* Pushes title to far right if loader is removed or before it */
+    font-weight: 700; color: var(--text-primary); text-transform: uppercase;
+    letter-spacing: 1.5px; white-space: nowrap;
 }
 .nav-title span.live-accent {
     font-weight: normal;
-    color: #00cbfe; /* YOUR SPECIFIC BLUE COLOR */
+    color: var(--accent-blue);
 }
-
 
 /* --- Hero Section --- */
 .hero-section {
     height: 80vh; min-height: 550px; display: flex; align-items: center;
     justify-content: center; text-align: center; position: relative;
-    padding-top: 80px; color: #fff;
+    padding-top: 80px; color: var(--hero-text-color);
 }
-.hero-content-wrapper { position: relative; z-index: 1; padding: 30px 20px; background-color: rgba(0,0,0,0.2); border-radius: 8px;}
+.hero-content-wrapper {
+    position: relative; z-index: 1; padding: 30px 20px;
+    background-color: rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+body.light-mode .hero-content-wrapper { background-color: rgba(255,255,255,0.05); }
+
 .hero-text h1 {
     font-family: 'Playfair Display', serif; font-size: clamp(3.2em, 6.5vw, 5em);
-    font-weight: 700; color: #fff; margin-bottom: 0.3em; line-height: 1.1;
-    text-shadow: 0 3px 20px rgba(0,0,0,0.7);
+    font-weight: 700; color: inherit; margin-bottom: 0.3em; line-height: 1.1;
+    text-shadow: var(--hero-text-shadow);
 }
 .hero-text p {
     font-family: 'Lato', sans-serif; font-size: clamp(1.1em, 2.2vw, 1.35em);
-    font-weight: 300; color: rgba(234, 224, 213, 0.9);
+    font-weight: 300; color: var(--hero-subtext-color);
     margin-bottom: 2em; max-width: 600px; margin-left: auto; margin-right: auto;
-    text-shadow: 0 1px 8px rgba(0,0,0,0.5);
+    text-shadow: var(--hero-text-shadow);
 }
 .cta-button {
-    display: inline-block; background-color: #00cbfe; /* NEW BLUE for CTA */
+    display: inline-block; background-color: var(--accent-blue);
     color: #ffffff; border: 2px solid transparent;
     padding: 15px 45px; text-decoration: none; font-family: 'Montserrat', sans-serif;
     font-weight: 600; font-size: 1em; border-radius: 5px;
-    transition: all 0.3s ease; box-shadow: 0 5px 18px rgba(0, 203, 254, 0.25);
+    transition: all 0.3s ease; box-shadow: 0 5px 18px rgba(0,0,0,0.1);
     text-transform: uppercase; letter-spacing: 1px;
 }
+body.dark-mode .cta-button { box-shadow: 0 5px 18px rgba(0, 203, 254, 0.25); }
+body.light-mode .cta-button { color: var(--bg-primary); box-shadow: 0 5px 18px rgba(0, 119, 182, 0.2); }
+
+
 .cta-button:hover {
     background-color: transparent;
-    border-color: #00cbfe;
-    color: #00cbfe;
+    border-color: var(--accent-blue);
+    color: var(--accent-blue);
     transform: translateY(-2px);
-    box-shadow: 0 7px 22px rgba(0, 203, 254, 0.3);
 }
 
 /* --- Main Results Content Area & Section --- */
 .content-area { flex-grow: 1; padding: 60px 5%; position: relative; z-index: 5; }
 .results-section {
     max-width: 1180px; margin: 0 auto; display: flex; gap: 40px;
-    background-color: rgba(24, 24, 28, 0.9);
+    background-color: var(--bg-content);
     backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
     padding: 40px; border-radius: 12px;
-    border: 1px solid rgba(0, 203, 254, 0.15);
-    box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.25);
     position: relative; overflow: hidden;
 }
-.results-section::before { /* Muted flag background with new blue */
-    content: ''; position: absolute; top: 0; left: 0;
-    width: 300%; height: 100%; z-index: -1;
+.results-section::before {
+    content: ''; position: absolute; top: 0; left: 0; width: 300%; height: 100%; z-index: -1;
     background-image: linear-gradient(120deg,
-        rgba(0, 203, 254, 0.07) 0%, rgba(0, 203, 254, 0.07) 20%,
-        rgba(200, 200, 200, 0.05) 20%, rgba(200, 200, 200, 0.05) 40%,
-        rgba(50, 50, 50, 0.07) 40%, rgba(50, 50, 50, 0.07) 60%,
-        rgba(0, 203, 254, 0.07) 60%, rgba(0, 203, 254, 0.07) 80%,
-        rgba(200, 200, 200, 0.05) 80%, rgba(200, 200, 200, 0.05) 100%
+        var(--results-flag-blue) 0%,  var(--results-flag-blue) 20%,
+        var(--results-flag-white) 20%, var(--results-flag-white) 40%,
+        var(--results-flag-black) 40%, var(--results-flag-black) 60%,
+        var(--results-flag-blue) 60%, var(--results-flag-blue) 80%,
+        var(--results-flag-white) 80%, var(--results-flag-white) 100%
     );
-    background-size: 60% 100%; opacity: 0.3;
+    background-size: 60% 100%; opacity: 0.3; /* Can adjust this for more/less subtlety */
     animation: waveBackground 45s linear infinite;
 }
 @keyframes waveBackground { 0% { background-position: 0% 50%; } 100% { background-position: 150% 50%; } }
 
 .results-column { flex: 2.5; }
-.sidebar-column { flex: 1; padding-left: 30px; border-left: 1px solid rgba(0, 203, 254, 0.1); }
+.sidebar-column { flex: 1; padding-left: 30px; border-left: 1px solid var(--border-color); }
 .results-column h2, .sidebar-column h3 {
-    font-family: 'Playfair Display', serif; color: #EAE0D5; margin-bottom: 30px;
+    font-family: 'Playfair Display', serif; color: var(--text-primary); margin-bottom: 30px;
     font-size: 2em; font-weight: 700; padding-bottom: 15px; position: relative;
     text-align: left;
 }
 .results-column h2::after, .sidebar-column h3::after {
     content: ''; position: absolute; bottom: -1px; left: 0;
-    width: 60px; height: 3px; background-color: #00cbfe; /* New Blue accent */
+    width: 60px; height: 3px; background-color: var(--accent-blue);
     border-radius: 2px;
 }
-.sidebar-widget { margin-bottom: 30px; padding: 20px; background-color: rgba(42, 42, 42, 0.4); border-radius: 8px; }
+.sidebar-widget { margin-bottom: 30px; padding: 20px; background-color: var(--bg-widget); border-radius: 8px; }
 .sidebar-widget h4 {
-    color: #00cbfe; /* New Blue for subheadings */
+    color: var(--accent-blue);
     margin-bottom: 12px;
     font-family: 'Montserrat', sans-serif; font-weight: 600;
     font-size: 1.1em;
 }
 .sidebar-widget p#botswana-fact-display {
     font-size: 0.95em;
-    color: #c0c8d0;
+    color: var(--text-secondary);
     font-family: 'Lato', sans-serif;
-    min-height: 100px;
+    min-height: 100px; /* Adjust if facts are longer/shorter */
     transition: opacity 0.5s ease-in-out;
 }
 
@@ -177,9 +276,9 @@ body {
 .loading-spinner { display: flex; justify-content: center; align-items: center; height: 200px; }
 .loading-spinner div {
   box-sizing: border-box; display: block; position: absolute; width: 60px; height: 60px;
-  margin: 8px; border: 7px solid #00cbfe; border-radius: 50%; /* New Blue */
+  margin: 8px; border: 7px solid var(--accent-blue); border-radius: 50%;
   animation: loading-spinner-anim 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  border-color: #00cbfe transparent transparent transparent;
+  border-color: var(--accent-blue) transparent transparent transparent;
 }
 @keyframes loading-spinner-anim { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
@@ -187,85 +286,89 @@ body {
 /* --- Contestant Item (Main Bar) --- */
 .contestant-item {
     background-color: transparent; margin-bottom: 10px; border-radius: 0;
-    border-bottom: 1px solid rgba(0, 203, 254, 0.1); /* Blue separator */
+    border-bottom: 1px solid var(--border-color);
     transition: background-color 0.3s ease;
 }
 .contestant-item:last-child { border-bottom: none; }
 .contestant-main-info {
     display: flex; align-items: center; padding: 18px 10px 18px 0; cursor: pointer;
 }
-.contestant-item:hover .contestant-main-info { background-color: rgba(0, 203, 254, 0.05); }
+.contestant-item:hover .contestant-main-info { background-color: rgba(0, 203, 254, 0.05); } /* Fallback or specific for dark */
+body.light-mode .contestant-item:hover .contestant-main-info { background-color: rgba(0, 119, 182, 0.08); }
+
 
 .contestant-rank {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.3em;
-    font-weight: 700;
-    color: #EAE0D5; /* Rank color to contrast with blue, could be a gold like #B08D57 */
-    min-width: 45px;
-    padding-right: 15px;
-    text-align: right;
-    flex-shrink: 0;
-    line-height: 1.2;
+    font-family: 'Montserrat', sans-serif; font-size: 1.3em; font-weight: 700;
+    color: var(--accent-gold); min-width: 45px; padding-right: 15px;
+    text-align: right; flex-shrink: 0; line-height: 1.2;
 }
 .contestant-details { flex-grow: 1; display: flex; flex-direction: column; justify-content: center; }
 .contestant-name {
     font-family: 'Montserrat', sans-serif; font-size: 1.15em; font-weight: 500;
-    color: #EAE0D5; margin-bottom: 8px; line-height: 1.2;
+    color: var(--text-primary); margin-bottom: 8px; line-height: 1.2;
 }
 .vote-bar-container {
-    width: 100%; height: 10px; background-color: rgba(0,0,0,0.6); /* Dark track */
+    width: 100%; height: 10px; background-color: rgba(0,0,0,0.3);
     border-radius: 5px; position: relative; overflow: hidden;
 }
+body.light-mode .vote-bar-container { background-color: rgba(0,0,0,0.1); }
+
 .vote-bar {
-    height: 100%; background: #00cbfe; /* New Blue for vote bars */
+    height: 100%; background: var(--accent-blue);
     border-radius: 5px; transition: width 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-    position: relative; z-index: 1; /* Ensure bar is above shimmer track if any confusion */
+    position: relative; z-index: 1;
 }
-.vote-bar.updating::after { /* Shimmer effect */
+.vote-bar.updating::after {
     content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient( to right, rgba(173, 239, 255, 0) 0%, rgba(173, 239, 255, 0.3) 50%, rgba(173, 239, 255, 0) 100% ); /* Lighter shade of #00cbfe */
-    border-radius: inherit; /* Inherit border-radius from .vote-bar */
-    transform: translateX(-100%);
+    background: linear-gradient( to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0) 100% );
+    border-radius: inherit; transform: translateX(-100%);
     animation: shimmer 1s ease-out; z-index: 2;
 }
-@keyframes shimmer {
-    0% { transform: translateX(-100%); } 50% { transform: translateX(100%); } 100% { transform: translateX(100%); }
+body.light-mode .vote-bar.updating::after {
+     background: linear-gradient( to right, rgba(60, 60, 60, 0) 0%, rgba(60, 60, 60, 0.1) 50%, rgba(60, 60, 60, 0) 100% );
 }
+@keyframes shimmer { 0% { transform: translateX(-100%); } 50% { transform: translateX(100%); } 100% { transform: translateX(100%); } }
 
 .vote-count-display {
-    font-size: 1.25em; font-weight: 700; color: #ffffff; margin-left: 20px;
+    font-size: 1.25em; font-weight: 700; color: var(--text-primary); margin-left: 20px;
     min-width: 65px; text-align: right; font-family: 'Orbitron', sans-serif; flex-shrink: 0;
 }
 
 /* --- Vote Log Details (Expandable Sub-bars) --- */
 .vote-log-details-wrapper {
-    background-color: rgba(10, 15, 24, 0.2); max-height: 0; overflow: hidden;
+    background-color: rgba(10, 15, 24, 0.1); max-height: 0; overflow: hidden;
     transition: all 0.5s ease-in-out; padding-left: 65px;
-    padding-right: 5px; border-top: 1px solid rgba(0, 203, 254, 0.1);
+    padding-right: 5px; border-top: 1px solid var(--border-color);
 }
+body.light-mode .vote-log-details-wrapper { background-color: rgba(230, 230, 235, 0.3); }
+
 .contestant-item.expanded .vote-log-details-wrapper { padding-top: 12px; padding-bottom: 15px; }
 .vote-log-list { list-style-type: none; padding-left: 0; max-height: 230px; overflow-y: auto; }
 .vote-log-list::-webkit-scrollbar { width: 6px; }
-.vote-log-list::-webkit-scrollbar-track { background: rgba(0,0,0,0.3); border-radius:3px;}
-.vote-log-list::-webkit-scrollbar-thumb { background-color: #00cbfe; } /* New blue scroll thumb */
+.vote-log-list::-webkit-scrollbar-track { background: rgba(0,0,0,0.15); border-radius:3px;}
+body.light-mode .vote-log-list::-webkit-scrollbar-track { background: rgba(0,0,0,0.08); }
+.vote-log-list::-webkit-scrollbar-thumb { background-color: var(--accent-blue); }
 .vote-log-list h5.vote-log-heading {
-    font-family: 'Montserrat', sans-serif; font-size: 0.95em; color: #00cbfe; /* New Blue */
+    font-family: 'Montserrat', sans-serif; font-size: 0.95em; color: var(--accent-blue);
     margin-bottom: 10px; padding-bottom: 5px;
-    border-bottom: 1px solid rgba(0, 203, 254, 0.2); font-weight: 500;
+    border-bottom: 1px solid var(--border-color); font-weight: 500;
 }
 .vote-log-item {
     display: flex; justify-content: space-between; align-items: center;
-    background-color: rgba(42, 42, 42, 0.15); padding: 7px 10px; margin-bottom: 3px;
-    border-radius: 3px; font-size: 0.8em; color: #b0b8c5;
-    border-left: 2px solid #00cbfe; /* New Blue accent */
+    background-color: rgba(42, 42, 42, 0.08); padding: 7px 10px; margin-bottom: 3px;
+    border-radius: 3px; font-size: 0.8em; color: var(--text-secondary);
+    border-left: 2px solid var(--accent-blue);
 }
+body.light-mode .vote-log-item { background-color: rgba(255,255,255,0.5); }
+
 .vote-log-item .voter-num { font-weight: 400; }
 .vote-log-item .vote-time { font-family: 'Lato', sans-serif; font-size: 0.9em; font-weight: 300; }
 
 /* --- Footer --- */
 .site-footer {
     text-align: center; padding: 30px; margin-top: 50px;
-    color: rgba(234, 224, 213, 0.5); font-size: 0.9em;
-    background-color: rgba(10, 10, 12, 0.9);
-    border-top: 1px solid rgba(0, 203, 254, 0.1);
+    color: var(--text-secondary); opacity: 0.8;
+    font-size: 0.9em;
+    background-color: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
 }
